@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f7f7f7;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #message {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+        
+        <input type="submit" value="Login">
+        <span id="message"></span>
+    </form>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            const messageElement = document.getElementById('message');
+
+            try {
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Handle a successful login
+                    messageElement.style.color = 'green';
+                    messageElement.textContent = result.message;
+
+                    // Optionally redirect or do other actions after successful login
+                } else {
+                    // Show an error message
+                    messageElement.style.color = 'red';
+                    messageElement.textContent = result.message;
+                }
+            } catch (error) {
+                messageElement.style.color = 'red';
+                messageElement.textContent = 'An error occurred. Please try again.';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f7f7;
+        }
+
+        #navbar {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        #navbar h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 24px;
+        }
+
+        #navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        #navbar li {
+            margin-right: 20px;
+        }
+
+        button {
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #555; /* Change to the desired hover color */
+            color: #fff; /* Change text color on hover if needed */
+        }
+
+        pre {
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Custom styles for the table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Apply a different background color to alternate rows for better readability */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Custom styles for Livecoinwatch widget container */
+        .livecoinwatch-widget-container {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        /* Custom styles for the Livecoinwatch widget itself */
+        .livecoinwatch-widget-6 {
+            width: 100px; /* Adjust the width as needed */
+        }
+    </style>
+    <!-- Livecoinwatch widget script -->
+    <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>
+</head>
+<body>
+    <div id="navbar">
+        <h1>Your Logo</h1>
+        <ul>
+            <li><button onclick="window.location.href='login.html'">Log in</button></li>
+            <li><button onclick="window.location.href='signup.html'">Sign up</button></li>
+            <li><button>How it works?</button></li>
+            <li><button>New to crypto</button></li>
+            <!-- Livecoinwatch widget container -->
+            <li class="livecoinwatch-widget-container">
+                <div class="livecoinwatch-widget-6" lcw-coin="BTC" lcw-base="USD" lcw-period="d" lcw-color-tx="#ffffff" lcw-color-bg="#1f2434" lcw-border-w="1"></div>
+            </li>
+        </ul>
+    </div>
+    <div id="content">
+        <pre>
+ /\_/\  
+( o.o ) 
+> ^ <
+        </pre>
+
+        <!-- Table with the specified columns -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Discount</th>
+                    <th>Price</th>
+                    <th>Store</th>
+                    <th>Amount</th>
+                    <th>User</th>
+                    <th>Select</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Sample table data, you can replace this with your actual data -->
+                <tr>
+                    <td>10%</td>
+                    <td>$50.00</td>
+                    <td>Store A</td>
+                    <td>5</td>
+                    <td>User 1</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>20%</td>
+                    <td>$75.00</td>
+                    <td>Store B</td>
+                    <td>3</td>
+                    <td>User 2</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
